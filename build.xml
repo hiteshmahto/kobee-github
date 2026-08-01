@@ -1,0 +1,46 @@
+<project name="MyServiceNowProject" default="jar">
+
+    <!-- Define the properties for our source, build, and distribution directories -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="jar.name" value="MyServiceNowApp.jar"/>
+
+    <!-- 
+        Target to prepare the directories. 
+        The 'compile' target will depend on this.
+    -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <!-- 
+        Target to compile the Java source code from the 'src' directory 
+        into the 'build' directory.
+    -->
+    <target name="compile" depends="init" description="Compile the source code.">
+        <javac srcdir="${src.dir}" destdir="${build.dir}"/>
+    </target>
+
+    <!-- 
+        Target to package the compiled code into a JAR file.
+        This is the default target that will run.
+    -->
+    <target name="jar" depends="compile" description="Generate the JAR file.">
+        <jar destfile="${dist.dir}/${jar.name}" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="com.example.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- 
+        Target to clean up the build and dist directories.
+    -->
+    <target name="clean" description="Clean up the project.">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+</project>
