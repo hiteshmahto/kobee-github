@@ -9,6 +9,7 @@
     <!-- 
         Target to prepare the directories. 
         The 'compile' target will depend on this.
+        New line added for changes
     -->
     <target name="init">
         <mkdir dir="${build.dir}"/>
