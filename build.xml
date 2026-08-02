@@ -1,4 +1,3 @@
-<project name="MyServiceNowProject" default="jar">
 
     <!-- Define the properties for our source, build, and distribution directories -->
     <property name="src.dir" value="src"/>
