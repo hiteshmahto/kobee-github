@@ -1,5 +1,5 @@
 <project name="FailScript">
     <target name="fail">
-        <fail message="This is an intentional failure to test the 'Warning' status."/>
+        <fail message="This is an intentional failure to test the 'Warning' status. Let's see it works or not"/>
     </target>
 </project>
